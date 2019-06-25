@@ -19,7 +19,7 @@ int main(){
         for(j = 0; j < n; j++){
            a=a+(A[j]+m-1)/m;
         }
-        if(a>= k) lb = m;
+        if(a> k) lb = m;
         else ub = m;
     }
     

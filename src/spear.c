@@ -22,7 +22,7 @@ int main(){
             a = a + A[j]/x;
         }
         
-        if(a >= k) ib = x;
+        if(a > k) ib = x;
         else ub = x;
     }
     
