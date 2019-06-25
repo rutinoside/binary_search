@@ -16,8 +16,8 @@ int main(){
     ub = n;
     while(ub - lb > 1){
         int m = (lb + ub)/2;
-        for(i = 0; i < n; i++){
-           a=a+(A[j]+m-1)/m
+        for(j = 0; j < n; j++){
+           a=a+(A[j]+m-1)/m;
         }
         if(a>= k) lb = m;
         else ub = m;
