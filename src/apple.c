@@ -11,16 +11,16 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-    int a = 0;
-    lb = -1;
-    ub = n;
+    lb = 0;
+    ub = 1e9+1;
     while(ub - lb > 1){
         int m = (lb + ub)/2;
+        int a = 0;
         for(j = 0; j < n; j++){
            a=a+(A[j]+m-1)/m;
         }
-        if(a> k) lb = m;
-        else ub = m;
+        if(a <= k) ub = m;
+        else lb = m;
     }
     
     printf("%d\n", ub);

@@ -6,35 +6,36 @@ int A[100000];
 
 
 int main(){
-  int i, j lb, ub;
+  int i, j, lb, ub;
   scanf("%d%d", &n, &k);
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
 
-    lb = -1;
-    ub = n;
-    int m = 1;
-    int a = 0;
+    lb = 0;
+    ub = 1e9;
     while(ub - lb > 1){
-        int x = (lb + ub)/2;
+        int m = (lb + ub)/2;
+        int x = 1;
+        int y = 0;
+        
         for(j = 0; j < n; j++){
-            if(x<A[j]){
-                m = m + k;
+            if(m<A[j]){
+                x = x + k;
                 break;
             }
-            if(a+A[j]>x){
-                a=A[j];
-                m=m+1;
+            if(y+A[j]>m){
+                y=A[j];
+                x=x+1;
             }
             else{
-                a=a+A[j];
+                y=y+A[j];
             }
             }
-            if(m > k) ib = x;
-        else ub = x;
+            if(x <= k) ub = m;
+        else lb = m;
     
-    
+}    
     printf("%d\n", ub);
 
   return 0;
